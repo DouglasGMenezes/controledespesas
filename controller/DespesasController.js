@@ -1,4 +1,4 @@
-import despesaSevice from '../service/DespesasService.js';
+const despesaSevice = require('../service/DespesaService');
 
 //Listar Despesas
 function list(req, res) {
@@ -46,10 +46,10 @@ function deletar(req, res) {
   catch(err) { res.status(err.id).json(err) }
 }
 
-export default {
-  list,
-  insert,
-  getById,
-  atualizar,
-  deletar
-}
+module.exports = {
+    list,
+    insert,
+    getById,
+    atualizar,
+    deletar 
+    }

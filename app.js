@@ -1,5 +1,5 @@
 import express from 'express'
-import despesasRouter from './router/DespesasRouter.js';
+import despesasRouter from './router/UsuarioRouter.js';
 
 const app = express()
 const PORT = 3000

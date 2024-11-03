@@ -1,5 +1,3 @@
-
-
 let listarDespesas = [];
 let idGerador = 1;
 
@@ -8,7 +6,7 @@ const list = () => listarDespesas;
 
 const insert = (despesa) => {
 
-    if( !despesa || !despesa.descricao || !despesa.valor || !despesa.vencimento || !despesa.status )
+    if( !despesa || !despesa.descricao || !despesa.valor || !despesa.vencimento || !despesa.status || !despesa.idUsuario)
     { return undefined };
 
     despesa.id = idGerador++;
@@ -35,14 +33,13 @@ const deletar = (id) => {
     return indiceDespesa !== -1 ? listarDespesas.splice( indiceDespesa, 1 )[0] : undefined;
 }
 
-
-export default {
+module.exports = { 
     list,
     insert,
     getById,
     atualizar,
     deletar
-};
+}
 
 
 

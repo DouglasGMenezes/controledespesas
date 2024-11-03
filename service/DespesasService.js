@@ -1,11 +1,10 @@
-
-import despesaRepository from '../repository/DespesasRepository.js';
+const despesaRepository = require('../repository/DespesaRepository');
 
 
 const list = () => despesaRepository.list();
 
 const insert = (despesa) => {
-    if( despesa && despesa.descricao && despesa.valor && despesa.vencimento && despesa.status ) 
+    if( despesa && despesa.descricao && despesa.valor && despesa.vencimento && despesa.status && despesa.idUsuario ) 
         { return despesaRepository.insert(despesa) }
     else 
         { throw { id: 400, msg: "Despesa com dados incorretos"} }
@@ -35,7 +34,7 @@ const deletar = (id) => {
     return despesa;
 }
 
-export default {
+module.exports = {
     list,
     insert,
     getById,

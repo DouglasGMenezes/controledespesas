@@ -1,6 +1,4 @@
-
-import despesasRepository from './DespesasRepository.js';
-
+const DespesasRepository = require('./DespesasRepository');
 
 //Cenário de sucesso
 test('Quando criar a despesa, deve retornar e conter na lista a despesa com id=1', () => {
@@ -55,7 +53,8 @@ test('Quando buscar por um id existente, deve retornar o dado corretamente', () 
         descricao: "Mercado",
         valor: 500,
         vencimento: "2024-10-30",
-        status: "Pago"
+        status: "Pago",
+        idUsuario: 1
     });
     const resultado = despesasRepository.getById(despesaInserida.id);
     //teste mais simples:
@@ -77,7 +76,8 @@ test('Quando deletar um id existente, deve remover e retornar o dado', () => {
         id: 2,
         descricao: "Aluguel",
         vencimento: "2024-10-30",
-        status: "Pago"
+        status: "Pago",
+        idUsuario: 1
     };
     const quantidadeEsperada = 1;
     resultado = despesasRepository.deletar(2);
